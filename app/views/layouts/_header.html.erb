@@ -1,0 +1,16 @@
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">Nav
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/">Home</a>
+      <% if current_user %>
+      	<a id='logout' href="/logout">Logout</a>
+      <% else %>
+        <a href="/signup">Signup</a>
+        <a href="/login">Login</a>
+      <% end %>
+    </div>
+  </div>
+</div>

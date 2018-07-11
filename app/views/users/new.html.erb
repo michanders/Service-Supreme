@@ -1,0 +1,10 @@
+<h1>Signup</h1>
+<div class='forms'>
+  <%= form_for :user, url: '/users' do |f| %>
+    <%= f.text_field :name, placeholder: "Username", :autocomplete => :off %><br>
+    <%= f.text_field :email, placeholder: "Email", :autocomplete => :off %><br>
+    <%= f.password_field :password, placeholder: "Password"%><br>
+    <%= f.password_field :password_confirmation, placeholder: "Password Confirmation"%><br>
+    <%= f.submit "Signup" %><br>
+  <% end %>
+</div>
