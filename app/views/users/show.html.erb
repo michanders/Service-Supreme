@@ -1,0 +1,13 @@
+<% if !current_user.vehicles.empty? %>
+	<% @vehicles.each do |vehicle| %>
+	  <%= vehicle.make %><br>
+	  <%= vehicle.model %><br>
+	    <form action='/delete'>
+	        <button type="submit" title="<%= vehicle.model %>" name='delete' value="<%= vehicle.id %>">Delete Vehicle</button><br>
+	    </form><br>
+	  </div><br>
+	<%end%>
+<%else%>
+	<h3>No vehicles stored</h3>
+	<a href="/newvehicle">Add a Vehicle<a>
+<%end%>

@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @vehicles = current_user.vehicles
   end
 
   private
