@@ -1,0 +1,27 @@
+
+Make: <%= @vehicle.make %><br>
+Model: <%= @vehicle.model %><br>
+Year: <%= @vehicle.year %><br>
+Color: <%= @vehicle.color %><br>
+Mileage: <%= @vehicle.mileage %><br>
+
+MPG: <%= @vehicle.mpg %><br><br>
+
+<form action='/miles'>
+	<input type ='number' name='miles' placeholder="Miles Traveled"></input>
+	<input type ='number' name='gallons' placeholder="Gallons Used"></input>
+    <button type="submit" title="<%= @vehicle.model %>" name='id' value="<%= @vehicle.id %>">Calculate Vehicle MPG</button><br>
+</form><br>
+
+Last oil change @ <%= @vehicle.mileage.to_i%><br>
+Next oil change @ <%= @vehicle.mileage.to_i + 3000 %><br><br>
+  
+<%= form_for @vehicle, url: '/oilchange' do |f| %>
+  <%= f.number_field :mileage, :autocomplete => :off, :placeholder => "New Mileage" %><br>
+  <%= f.hidden_field :id, :value => @vehicle.id %>
+  <%= f.submit "Oil Change" %>
+<% end %><br>
+
+<form action='/delete'>
+    <button type="submit" title="<%= @vehicle.model %>" name='delete' value="<%= @vehicle.id %>">Delete Vehicle</button><br>
+</form><br>

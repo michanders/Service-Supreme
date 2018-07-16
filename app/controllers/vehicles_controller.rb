@@ -4,6 +4,7 @@ class VehiclesController < ApplicationController
   end
 
   def show
+    @vehicle = Vehicle.find(params[:id])
   end
 
   def new
@@ -21,12 +22,27 @@ class VehiclesController < ApplicationController
   def update
   end
   
+  def oilchange
+    vehicle = Vehicle.find(params[:vehicle][:id])
+    vehicle.update(mileage: params[:vehicle][:mileage])
+    vehicle.save
+    redirect_to vehicle_path(vehicle.id)
+  end
+  
+  def mpg
+    @vehicle = Vehicle.find(params[:id])
+    @vehicle.update(mpg: @vehicle.mpg_calc(params[:miles], params[:gallons]))
+    @vehicle.save
+    redirect_to vehicle_path(@vehicle.id)
+  end
+  
   def destroy
     Vehicle.delete(params[:delete])
     redirect_to user_path(current_user.id)
   end
 
   private
+  
 
   def vehicle_params
     params.require(:vehicle).permit(:make, :model, :year, :color, :mpg, :mileage, :user_id)

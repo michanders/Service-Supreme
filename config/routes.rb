@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
   
-  get '/enter' => 'users#index'
+  get '/enter' => 'users#show'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -16,5 +16,8 @@ Rails.application.routes.draw do
   get '/newvehicle' => 'vehicles#new'
   post '/vehicle' => 'vehicles#create'
   get '/delete' => 'vehicles#destroy'
+  
+  patch '/oilchange' => 'vehicles#oilchange'
+  get '/miles' => 'vehicles#mpg' 
   
 end
