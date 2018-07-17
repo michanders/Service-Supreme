@@ -1,0 +1,7 @@
+<br>
+<%= form_for :auto_entry, url: '/entry' do |f| %>
+  <%= f.text_field :entry, placeholder: "Add a service entry", :autocomplete => :off %><br>
+
+  <%= f.hidden_field :vehicle_id, :value => params[:vehicleid] %>
+  <%= f.submit "Submit" %>
+<% end %>

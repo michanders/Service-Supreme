@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   patch '/oilchange' => 'vehicles#oilchange'
   get '/miles' => 'vehicles#mpg' 
   
+  get '/log' => 'auto_logs#new'
+  post '/entry' => 'auto_logs#create'
+  
+  
 end

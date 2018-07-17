@@ -4,7 +4,6 @@ Model: <%= @vehicle.model %><br>
 Year: <%= @vehicle.year %><br>
 Color: <%= @vehicle.color %><br>
 Mileage: <%= @vehicle.mileage %><br>
-
 MPG: <%= @vehicle.mpg %><br><br>
 
 <form action='/miles'>
@@ -21,6 +20,14 @@ Next oil change @ <%= @vehicle.mileage.to_i + 3000 %><br><br>
   <%= f.hidden_field :id, :value => @vehicle.id %>
   <%= f.submit "Oil Change" %>
 <% end %><br>
+
+<form action='/log'>
+    <button type="submit" title="<%= @vehicle.model %>" name='vehicleid' value="<%= @vehicle.id %>">Add a service entry</button><br>
+</form><br>
+
+<%@vehicle.auto_logs.each do |log|%>
+	<%=log.entry%><br>
+<%end%><br><br>
 
 <form action='/delete'>
     <button type="submit" title="<%= @vehicle.model %>" name='delete' value="<%= @vehicle.id %>">Delete Vehicle</button><br>

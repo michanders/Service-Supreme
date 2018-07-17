@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_172221) do
+ActiveRecord::Schema.define(version: 2018_07_17_214700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "auto_logs", force: :cascade do |t|
+    t.text "entry"
+    t.bigint "vehicle_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vehicle_id"], name: "index_auto_logs_on_vehicle_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

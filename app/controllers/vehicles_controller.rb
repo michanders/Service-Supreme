@@ -36,6 +36,7 @@ class VehiclesController < ApplicationController
     redirect_to vehicle_path(@vehicle.id)
   end
   
+  
   def destroy
     Vehicle.delete(params[:delete])
     redirect_to user_path(current_user.id)

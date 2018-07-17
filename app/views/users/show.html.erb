@@ -1,9 +1,10 @@
 <% if !current_user.vehicles.empty? %>
 	<% @vehicles.each do |vehicle| %>
 	  Make: <%= vehicle.make %><br>
-	  Model: <%= vehicle.model %><br><br>
+	  Model: <%= vehicle.model %><br>
 	  <%=link_to 'Vehicle Service', vehicle_path(vehicle.id)%><br><br>
 	<%end%>
+	<a href="/newvehicle">Add a Vehicle<a><br>
 <%else%>
 	<h3>No vehicles stored</h3>
 	<a href="/newvehicle">Add a Vehicle<a>
