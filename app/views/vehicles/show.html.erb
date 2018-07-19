@@ -12,7 +12,6 @@ MPG: <%= @vehicle.mpg %><br><br>
     <button type="submit" title="<%= @vehicle.model %>" name='id' value="<%= @vehicle.id %>">Calculate Vehicle MPG</button><br>
 </form><br>
 
-Last oil change @ <%= @vehicle.mileage.to_i%><br>
 Next oil change @ <%= @vehicle.mileage.to_i + 3000 %><br><br>
   
 <%= form_for @vehicle, url: '/oilchange' do |f| %>
@@ -21,13 +20,29 @@ Next oil change @ <%= @vehicle.mileage.to_i + 3000 %><br><br>
   <%= f.submit "Oil Change" %>
 <% end %><br>
 
-<form action='/log'>
-    <button type="submit" title="<%= @vehicle.model %>" name='vehicleid' value="<%= @vehicle.id %>">Add a service entry</button><br>
-</form><br>
 
+<form action='/log'>
+    <button type="submit" title="<%= @vehicle.model %>" name='vehicleid' value="<%= @vehicle.id %>">Add a Service Entry</button><br>
+</form><br>
 <%@vehicle.auto_logs.each do |log|%>
-	<%=log.entry%><br>
+	<form action='/deletelog'>
+		<%=log.entry%>
+	    <button type="submit" name='delete' value="<%= log.id %>"><img src="/images/can.png" width="15" height="15"></button>
+	</form>
 <%end%><br><br>
+
+
+<form action='/note'>
+    <button type="submit" title="<%= @vehicle.model %>" name='vehicleid' value="<%= @vehicle.id %>">Add a Service Note</button><br>
+</form><br>
+<%@vehicle.notes.each do |note|%>
+	<form action='/deletenote'>
+		<%=note.list%>
+	    <button type="submit" name='delete' value="<%= note.id %>"><img src="/images/can.png" width="15" height="15"></button>
+	</form>
+<%end%><br><br>
+
+
 
 <form action='/delete'>
     <button type="submit" title="<%= @vehicle.model %>" name='delete' value="<%= @vehicle.id %>">Delete Vehicle</button><br>

@@ -1,5 +1,6 @@
 class Vehicle < ApplicationRecord
   has_many :auto_logs
+  has_many :notes
   belongs_to :user
   
   def mpg_calc(miles, gallons)

@@ -23,5 +23,11 @@ Rails.application.routes.draw do
   get '/log' => 'auto_logs#new'
   post '/entry' => 'auto_logs#create'
   
+  get '/note' => 'notes#new'
+  post '/list' => 'notes#create'
+  
+  get '/deletelog' => 'auto_logs#destroy'
+  get '/deletenote' => 'notes#destroy'
+  
   
 end

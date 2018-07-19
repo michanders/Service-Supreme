@@ -1,4 +1,17 @@
-<h1>Welcome to Service Supreme</h1>
-<% if current_user %>
+
+<h1>Six Speed Service Supreme</h1>
+<% if !current_user %>
+	<h1>Login</h1>
+	<div class='forms' id='login'>
+	  <%= form_tag '/login' do %>
+	    <%= text_field_tag :email, nil, :placeholder => 'Email', :autocomplete => "off"%><br>
+	    <%= password_field_tag :password, nil, :placeholder => 'Password', :autocomplete => "off"%><br>
+	    <%= submit_tag "Login" %>
+	  <% end %>
+	</div>
+<% elsif current_user %>
 	<a href="/enter">Enter</a>
 <% end %>
+
+
+

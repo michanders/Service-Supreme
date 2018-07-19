@@ -6,6 +6,13 @@ class AutoLogsController < ApplicationController
     redirect_to vehicle_path(auto_params[:vehicle_id])
   end
   
+  def destroy
+    log = AutoLog.find(params[:delete])
+    vehicle = log.vehicle_id
+    log.delete
+    redirect_to vehicle_path(vehicle)
+  end
+  
   
   private
   

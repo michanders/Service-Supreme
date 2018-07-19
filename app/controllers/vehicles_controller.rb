@@ -25,6 +25,8 @@ class VehiclesController < ApplicationController
   def oilchange
     vehicle = Vehicle.find(params[:vehicle][:id])
     vehicle.update(mileage: params[:vehicle][:mileage])
+    log = AutoLog.new(entry: ("Oil change @ " + params[:vehicle][:mileage]).to_s, vehicle_id: params[:vehicle][:id])
+    log.save
     vehicle.save
     redirect_to vehicle_path(vehicle.id)
   end
