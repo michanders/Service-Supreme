@@ -1,3 +1,6 @@
-<%@vehicle.auto_logs.each do |log|%>
-	<%=log.entry%>
-<%end%>
+<body>
+  	<%= render 'layouts/header' %>	
+	<%@vehicle.auto_logs.each do |log|%>
+		<%=log.entry%>
+	<%end%>
+</body>

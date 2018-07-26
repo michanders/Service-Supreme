@@ -1,49 +1,58 @@
+<body class='garage'>
+	 <%= render 'layouts/header' %><br>
+	 
+	 <div class='vehicleshow'><br>
+		Make: <%= @vehicle.make %><br>
+		Model: <%= @vehicle.model %><br>
+		Year: <%= @vehicle.year %><br>
+		Color: <%= @vehicle.color %><br>
+		Mileage: <%= @vehicle.mileage %><br>
+		MPG: <%= @vehicle.mpg %><br>
+		<form action='/delete'>
+		    <button type="submit" title="<%= @vehicle.model %>" name='delete' value="<%= @vehicle.id %>">Delete Vehicle</button>
+		</form>
+	 </div>
+	 
+	 <div class='miles'><br>
+		<form action='/miles'>
+			<input type ='double' name='miles' placeholder="Miles Traveled" autocomplete="off"></input>
+			<input type ='double' name='gallons' placeholder="Gallons Used" autocomplete="off"></input>
+		    <button type="submit" title="<%= @vehicle.model %>" name='id' value="<%= @vehicle.id %>">Calculate Vehicle MPG</button>
+		</form>
+	 </div>
+	 
+	 <div class='oilchange'><br>
+		Next oil change @ <%= @vehicle.mileage.to_i + 3000 %><br>
+		  
+		<%= form_for @vehicle, url: '/oilchange' do |f| %>
+		  <%= f.number_field :mileage, :autocomplete => :off, :placeholder => "New Mileage" %><br>
+		  <%= f.hidden_field :id, :value => @vehicle.id %>
+		  <%= f.submit "Oil Change" %>
+		<% end %>
+	</div>
+	
+	<div class='log'><br>
+		<%@vehicle.auto_logs.each do |log|%>
+			<form action='/deletelog'>
+				<%=log.entry%>
+			    <button type="submit" name='delete' value="<%= log.id %>"><img src="/images/can.png" width="15" height="15"></button>
+			</form>
+		<%end%><br>
+		<form action='/log'>
+		    <button type="submit" title="<%= @vehicle.model %>" name='vehicleid' value="<%= @vehicle.id %>">Add a Service Entry</button><br>
+		</form><br>
+	</div>
+		
+	<div class='note'><br>
+		<%@vehicle.notes.each do |note|%>
+			<form action='/deletenote'>
+				<%=note.list%>
+			    <button type="submit" name='delete' value="<%= note.id %>"><img src="/images/can.png" width="15" height="15"></button>
+			</form>
+		<%end%><br>
+		<form action='/note'>
+		    <button type="submit" title="<%= @vehicle.model %>" name='vehicleid' value="<%= @vehicle.id %>">Add a Service Note</button><br>
+		</form><br>
+	</div>
+</body>
 
-Make: <%= @vehicle.make %><br>
-Model: <%= @vehicle.model %><br>
-Year: <%= @vehicle.year %><br>
-Color: <%= @vehicle.color %><br>
-Mileage: <%= @vehicle.mileage %><br>
-MPG: <%= @vehicle.mpg %><br><br>
-
-<form action='/miles'>
-	<input type ='number' name='miles' placeholder="Miles Traveled"></input>
-	<input type ='number' name='gallons' placeholder="Gallons Used"></input>
-    <button type="submit" title="<%= @vehicle.model %>" name='id' value="<%= @vehicle.id %>">Calculate Vehicle MPG</button><br>
-</form><br>
-
-Next oil change @ <%= @vehicle.mileage.to_i + 3000 %><br><br>
-  
-<%= form_for @vehicle, url: '/oilchange' do |f| %>
-  <%= f.number_field :mileage, :autocomplete => :off, :placeholder => "New Mileage" %><br>
-  <%= f.hidden_field :id, :value => @vehicle.id %>
-  <%= f.submit "Oil Change" %>
-<% end %><br>
-
-
-<form action='/log'>
-    <button type="submit" title="<%= @vehicle.model %>" name='vehicleid' value="<%= @vehicle.id %>">Add a Service Entry</button><br>
-</form><br>
-<%@vehicle.auto_logs.each do |log|%>
-	<form action='/deletelog'>
-		<%=log.entry%>
-	    <button type="submit" name='delete' value="<%= log.id %>"><img src="/images/can.png" width="15" height="15"></button>
-	</form>
-<%end%><br><br>
-
-
-<form action='/note'>
-    <button type="submit" title="<%= @vehicle.model %>" name='vehicleid' value="<%= @vehicle.id %>">Add a Service Note</button><br>
-</form><br>
-<%@vehicle.notes.each do |note|%>
-	<form action='/deletenote'>
-		<%=note.list%>
-	    <button type="submit" name='delete' value="<%= note.id %>"><img src="/images/can.png" width="15" height="15"></button>
-	</form>
-<%end%><br><br>
-
-
-
-<form action='/delete'>
-    <button type="submit" title="<%= @vehicle.model %>" name='delete' value="<%= @vehicle.id %>">Delete Vehicle</button><br>
-</form><br>

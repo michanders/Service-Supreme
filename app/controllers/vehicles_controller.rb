@@ -37,7 +37,7 @@ class VehiclesController < ApplicationController
     @vehicle.save
     redirect_to vehicle_path(@vehicle.id)
   end
-  
+
   
   def destroy
     Vehicle.delete(params[:delete])

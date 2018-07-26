@@ -1,16 +1,12 @@
 <div class="navbar">
-  <div class="dropdown">
-    <button class="dropbtn">Nav
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="/">Home</a>
-      <% if current_user %>
-      	<a id='logout' href="/logout">Logout</a>
-      <% else %>
-        <a href="/signup">Signup</a>
-        <!--<a href="/login">Login</a>-->
-      <% end %>
-    </div>
-  </div>
-</div><br>
+  <a href="/"><img id='logo' src='/images/servicelogo.jpg'></a>
+  <h1 id='title'>Service Supreme</h1>
+</div>
+<div id='links'>
+	  <% if current_user %>
+	  	<a id='logout' href="/logout">Logout</a>
+	  	<%= link_to "Garage", user_path(current_user.id), id: "garage"%>
+	  <% end %>
+</div>
+
+

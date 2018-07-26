@@ -1,11 +1,13 @@
-<br>
-<%= form_for :vehicle, url: '/vehicle' do |f| %>
-  <%= f.text_field :make, placeholder: "Make", :autocomplete => :off %><br>
-  <%= f.text_field :model, placeholder: "Model", :autocomplete => :off %><br>
-  <%= f.number_field :year, placeholder: "Year", :autocomplete => :off %><br>
-  <%= f.text_field :color, placeholder: "Color", :autocomplete => :off %><br>
-  <%= f.number_field :mpg, placeholder: "MPG", :autocomplete => :off %><br>
-  <%= f.number_field :mileage, placeholder: "Mileage", :autocomplete => :off %><br>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.submit "Submit" %>
-<% end %>
+<body>
+  	<%= render 'layouts/header' %>	
+	<br>
+	<%= form_for :vehicle, url: '/vehicle' do |f| %>
+	  <%= f.text_field :make, placeholder: "Make", :autocomplete => :off %><br>
+	  <%= f.text_field :model, placeholder: "Model", :autocomplete => :off %><br>
+	  <%= f.number_field :year, placeholder: "Year", :autocomplete => :off %><br>
+	  <%= f.text_field :color, placeholder: "Color", :autocomplete => :off %><br>
+	  <%= f.number_field :mileage, placeholder: "Mileage", :autocomplete => :off %><br>
+	  <%= f.hidden_field :user_id, :value => current_user.id %>
+	  <%= f.submit "Submit" %>
+	<% end %>
+</body>

@@ -1,3 +1,6 @@
-<% if current_user %>
-	<a href="/newvehicle">Add a Vehicle<a>
-<% end %>
+<body>
+  	<%= render 'layouts/header' %>	
+	<% if current_user %>
+		<a href="/newvehicle">Add a Vehicle<a>
+	<% end %>
+</body>

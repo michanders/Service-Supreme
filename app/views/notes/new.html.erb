@@ -1,7 +1,12 @@
-<br>
-<%= form_for :note, url: '/list' do |f| %>
-  <%= f.text_field :list, placeholder: "Add a service note", :autocomplete => :off %><br>
+<body class='garage'>
+	<%= render 'layouts/header' %><br>
+	<div class='entry'>
+		<%= form_for :note, url: '/list' do |f| %>
+		  <%= f.text_field :list, placeholder: "Add a service note", :autocomplete => :off %><br>
+		
+		  <%= f.hidden_field :vehicle_id, :value => params[:vehicleid] %>
+		  <%= f.submit "Submit" %>
+		<% end %>
+	</div>
+</body>
 
-  <%= f.hidden_field :vehicle_id, :value => params[:vehicleid] %>
-  <%= f.submit "Submit" %>
-<% end %>
