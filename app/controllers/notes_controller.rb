@@ -1,5 +1,10 @@
 class NotesController < ApplicationController
   
+  def new
+    @vehicle = Vehicle.find(params[:vehicleid])
+  end
+  
+  
   def create
     note = Note.new(note_params)
     note.save

@@ -1,0 +1,9 @@
+ <div class='oilchange'><br>
+	Next oil change @ <%= @vehicle.mileage.to_i + 3000 %><br>
+	  
+	<%= form_for @vehicle, url: '/oilchange' do |f| %>
+	  <%= f.number_field :mileage, :autocomplete => :off, :placeholder => "New Mileage" %><br>
+	  <%= f.hidden_field :id, :value => @vehicle.id %>
+	  <%= f.submit "Oil Change" %>
+	<% end %>
+</div>

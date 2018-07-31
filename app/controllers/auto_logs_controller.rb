@@ -1,5 +1,9 @@
 class AutoLogsController < ApplicationController
   
+  def new
+    @vehicle = Vehicle.find(params[:vehicleid])
+  end
+  
   def create
     auto = AutoLog.new(auto_params)
     auto.save

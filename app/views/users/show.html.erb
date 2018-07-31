@@ -1,20 +1,16 @@
 <body class='garage'>
   	<%= render 'layouts/header' %><br><br>
-		<% if !current_user.vehicles.empty? %>
+	<% if !current_user.vehicles.empty? %>
+		<div class='chalkboard'><br>
 			<% @vehicles.each do |vehicle| %>
-				<div class='vehiclebox'><br>
-				  <%= vehicle.make %>
-				  <%= vehicle.model %><br><br>
-				  <%=link_to 'Service Vehicle', vehicle_path(vehicle.id)%>
-				  </div>
-				<%end%>
-			<%else%>
-				<div class='vehicleadd'>
-					<h3>No vehicles stored</h3>
-				</div>
-			<%end%>
-		<br><br>
-	<div class='vehicleadd'><br>
+			  <%= vehicle.make %>
+			  <%= vehicle.model %>
+			  <%=link_to image_tag("/images/tool.png", class: "tool", title: "Service " + vehicle.model), vehicle_path(vehicle.id)%><br><br>
+			<%end%><br>
 		<a href="/newvehicle">Add a Vehicle<a>
+	<%else%>
+		<h3>No vehicles stored</h3>
+		<a href="/newvehicle">Add a Vehicle<a>
+	<%end%>
 	</div>
 </body>

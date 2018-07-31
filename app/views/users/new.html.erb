@@ -8,7 +8,7 @@
 		    <%= f.text_field :email, placeholder: "Email", :autocomplete => :off %><br>
 		    <%= f.password_field :password, placeholder: "Password"%><br>
 		    <%= f.password_field :password_confirmation, placeholder: "Password Confirmation"%><br><br>
-		    <%= f.submit "Signup" %><br>
+		    <%= f.submit "Signup", :type => :image, :src => image_path("/images/login.png") %><br>
 		  <% end %>
 		</div>
 	</div>

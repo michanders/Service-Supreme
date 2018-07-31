@@ -1,11 +1,15 @@
 <body class='garage'>
 	<%= render 'layouts/header' %><br>
-	<div class='entry'>
+	<div class='entry'><br>
+		<p class='vehicleentry'>
+			<%= @vehicle.make %>
+			<%= @vehicle.model %>
+		</p>
 		<%= form_for :auto_entry, url: '/entry' do |f| %>
 		  <%= f.text_field :entry, placeholder: "Add a service entry", :autocomplete => :off %><br>
 		
-		  <%= f.hidden_field :vehicle_id, :value => params[:vehicleid] %>
-		  <%= f.submit "Submit" %>
+		  <%= f.hidden_field :vehicle_id, :value => params[:vehicleid] %><br>
+		  <%= f.submit "Submit Note", :type => :image, :src => image_path("/images/note1.png") %>
 		<% end %>
 	</div>
 </body>
