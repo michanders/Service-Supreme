@@ -10,16 +10,23 @@ class VehiclesController < ApplicationController
   def new
   end
 
-  def edit
-  end
-
   def create
-    vehicle = Vehicle.new(vehicle_params)
-    vehicle.save
-    redirect_to user_path(current_user.id)
+    unless vehicle_params[:make].empty? || vehicle_params[:model].empty?
+      vehicle = Vehicle.new(vehicle_params)
+      vehicle.save
+      redirect_to user_path(current_user.id)
+    end
+  end
+  
+  def edit
+    @vehicle = Vehicle.find(params[:id])
   end
 
   def update
+    @vehicle = Vehicle.find(params[:vehicle][:vehicle_id])
+    @vehicle.update(vehicle_params)
+    @vehicle.save
+    redirect_to vehicle_path(@vehicle.id)
   end
   
   def oilchange

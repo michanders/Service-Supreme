@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   
   get '/newvehicle' => 'vehicles#new'
   post '/vehicle' => 'vehicles#create'
+  get '/edit' => 'vehicles#edit'
+  patch '/editvehicle' => 'vehicles#update'
   get '/delete' => 'vehicles#destroy'
   
   patch '/oilchange' => 'vehicles#oilchange'

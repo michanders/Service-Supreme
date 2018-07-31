@@ -1,18 +1,16 @@
 <body class='garage'>
 	 <%= render 'layouts/header' %><br>
-	 
 	 <div class='vehicleshow'><br>
 	 	<p class='vehicletitle'>
 		 	<%= @vehicle.year %>
 			<%= @vehicle.make %>
 			<%= @vehicle.model %>
 		</p><br>
+		<%=link_to image_tag("/images/tool.png", class: "edit", title: "Edit " + @vehicle.model), edit_vehicle_path(@vehicle.id)%>
 		Color:  <%= @vehicle.color %><br>
 		Mileage:  <%= @vehicle.mileage %><br>
-		MPG:  <%= @vehicle.mpg %><br><br>
-		<form action='/delete' id='deletevehicle'>
-		    <button type="submit" title="Delete <%= @vehicle.model %>" name='delete' value="<%= @vehicle.id %>"><img src="/images/can1.png" width="15" height="15"></button>
-		</form><br>
+		MPG:  <%= @vehicle.mpg %><br><br><br>
+			
 		<form action='/miles' id='mpgform'>
 			<input type ='double' name='miles' placeholder="Miles Traveled" autocomplete="off"></input>
 			<input type ='double' name='gallons' placeholder="Gallons Used" autocomplete="off"></input><br>
@@ -23,7 +21,7 @@
 			<%= form_for @vehicle, url: '/oilchange' do |f| %>
 			  <%= f.number_field :mileage, :autocomplete => :off, :placeholder => "Miles Traveled" %><br>
 			  <%= f.hidden_field :id, :value => @vehicle.id %>
-			  <%= f.submit "Oil Change", :type => :image, :src => image_path("/images/oilcan.png") %>
+			  <%= f.submit "Oil Change", :title => "Updates mileage and submits a log entry", :type => :image, :src => image_path("/images/oilcan.png") %>
 			<% end %>
 		</div>
 	 </div>
@@ -43,7 +41,7 @@
 			Service Log Empty<br>
 		<%end%>
 		<form action='/log'>
-		    <button type="submit" title="Add Service Entry" name='vehicleid' value="<%= @vehicle.id %>"><img src="/images/service.png" width="25" height="25"></button><br>
+		    <button type="submit" title="Add Service Entry" name='vehicleid' value="<%= @vehicle.id %>"><img src="/images/service.png" width="30" height="30"></button><br>
 		</form><br>
 	</div>
 		

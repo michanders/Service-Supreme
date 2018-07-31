@@ -24,20 +24,23 @@ body {
 }
 
 body.welcome {
-	background-image: url("/images/GarageDoorAll.jpg");
+	background-image: url("/images/garagedooropen.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: relative;
+}
+
+body.garage {
+	background-image: url("/images/insidegarage1.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
 
-body.garage {
-	background-image: url("/images/insidegarage.jpg");
-	background-repeat: no-repeat;
-	background-size: 100%;
-}
 .navbar {
     background: #0096ff;
     width: 100%;
     height: 75px;
+    z-index: 0;
 }
 
 #links {
@@ -54,17 +57,56 @@ body.garage {
 	padding: 5px;
 }
 
+#door{
+	background-image: url("/images/garagedoor3.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	margin: auto;
+	position: absolute;
+	z-index: -1;
+	width: 90%;
+	height: 656px;
+	right: 65px;
+	top: 75px;
+}
+
+#opener {
+	margin: auto;
+	position: absolute;
+	left: 10px;
+	top: 325px;
+	background: transparent;
+	width: 60px;
+	height: 125px;
+}
+
+#open {
+	margin: auto;
+	padding: none;
+	position: relative;
+	top: 5px;
+}
+
 #enter {
 	margin: auto;
-	width: 275px;
+	width: 350px;
+	height: 150px;
 	position: relative;
 	top: 150px;
 	background: #0096ff;
 	font-size: 40px;
+	background-image: url("/images/chalkboard.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 2px solid white;
+    z-index: -1;
 }
 
 #entry {
+	position: relative;
+	top: 45px;
 	color: white;
+	text-decoration: none;
 }
 
 #logo {
@@ -75,15 +117,15 @@ body.garage {
 }
 
 #title {
-    margin: auto; 
+    margin: auto;
+    width: 300px;
     color: white;
     position: relative;
-    right: 35px;
     top: 12px;
     font-size: 40px;
 }
 
-h1 a {
+h2 a {
     margin: auto;
     text-decoration: none;
 }
@@ -93,6 +135,8 @@ a:visited {
 }
 
 .vehiclebox, .log, .note, .entry, .formbox{
+	position: relative;
+	top: 40px;
 	text-align: center;
     background-image: url("/images/chalkboard.jpg");
     background-repeat: no-repeat;
@@ -100,14 +144,16 @@ a:visited {
     font-size: 25px;
     display: inline-block;
     color: white;
+    border: 2px solid white;
 }
 
 .note, .log, .entry {
 	margin: auto;
-	width: 375px;
-	height: 210px;
+	width: 440px;
+	height: 240px;
 	font-size: 18px;
 	overflow-y: scroll;
+	border: 2px solid white;
 }
 
 .log {
@@ -146,15 +192,19 @@ a:visited {
 }
 
 .chalkboard, .vehicleshow {
+	position: relative;
+	top: 40px;
 	text-align: center;
     margin: auto;
     width: 600px;
+    height: 325px;
     background-image: url("/images/chalkboard.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     font-size: 25px;
     color: white;
     display: inline-block;
+    border: 2px solid white;
 }
 
 .vehicletitle, .vehicleentry {
@@ -165,11 +215,14 @@ a:visited {
 
 .vehicletitle {
 	text-decoration: underline;
+	font-size: 35px;
 }
 
 
 .chalkboard {
-	height: 300px;
+	height: 325px;
+	overflow-y: scroll;
+	font-size: 35px;
 }
 
 #mpgform{
@@ -179,11 +232,26 @@ a:visited {
 	right: 135px;
 }
 
+#addvehicle {
+	margin: auto;
+	position: relative;
+	right: 270px;
+	bottom: 125px;
+}
+
 
 #deletevehicle {
 	position:  relative;
-	bottom: 200px;
-	left: 260px;
+	bottom: 43px;
+	left: 250px;
+	width: 50px;
+}
+
+.edit {
+	width: 25px;
+	position: relative;
+	right: 200px;
+	bottom: 90px;
 }
 
 .tool {
@@ -197,13 +265,18 @@ button {
 	padding: 10px;
 }
 
-#mpgform input, #vehicle_mileage, #note_list, #auto_entry_entry{
+#mpgform input, #vehicle_mileage, #note_list, #auto_entry_entry,
+#vehicle_make, #vehicle_model, #vehicle_year, #vehicle_color {
 	border: none;
     border-bottom: 2px solid white;
     background: transparent;
     text-align: center;
-    width: 125px;
+    width: 200px;
     color: white;
+}
+
+#mpgform input, #vehicle_mileage {
+	width: 140px;
 }
 
 ::placeholder {
@@ -216,11 +289,14 @@ button {
 
 
 .formbox {
-	height: 500px;
+	position: relative;
+	height: 365px;
 	width: 650px;
+	z-index: 0;
 }
 
-input#email, #password, #user_name, #user_email, #user_password, #user_password_confirmation{
+input#email, #password, #user_name, #user_email, 
+#user_password, #user_password_confirmation {
     border: none;
     border-bottom: 2px solid white;
     background: transparent;
@@ -233,6 +309,14 @@ input#email, #password, #user_name, #user_email, #user_password, #user_password_
 form {
 	text-align: center;
 	margin: auto;
+}
+
+button#open {
+	margin: auto;
+	position: relative;
+	bottom: 50px;
+	z-index: 0;
+	color: white;
 }
 
 

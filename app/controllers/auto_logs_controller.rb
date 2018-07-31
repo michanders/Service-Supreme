@@ -5,9 +5,11 @@ class AutoLogsController < ApplicationController
   end
   
   def create
-    auto = AutoLog.new(auto_params)
-    auto.save
-    redirect_to vehicle_path(auto_params[:vehicle_id])
+    unless auto_params[:entry].empty?
+      auto = AutoLog.new(auto_params)
+      auto.save
+      redirect_to vehicle_path(auto_params[:vehicle_id])
+    end
   end
   
   def destroy

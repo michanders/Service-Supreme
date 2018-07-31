@@ -9,7 +9,7 @@
 		  <%= f.text_field :list, placeholder: "Add a service note", :autocomplete => :off %><br>
 		
 		  <%= f.hidden_field :vehicle_id, :value => params[:vehicleid] %><br>
-		  <%= f.submit "Submit Service Entry", :type => :image, :src => image_path("/images/service.png") %>
+		  <%= f.submit :title => "Submit", :type => :image, :src => image_path("/images/login.png") %>
 		<% end %>
 	</div>
 </body>

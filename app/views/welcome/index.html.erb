@@ -2,7 +2,7 @@
   	<%= render 'layouts/header' %>
 		<% if !current_user %><br>
 		<div class='formbox'>
-			<h1>Login / <a href="/signup">Signup</a></h1>
+			<h2>Login / <a href="/signup">Signup</a></h2>
 			<div class='forms' id='login'>
 			  <%= form_tag '/login' do %>
 			    <%= text_field_tag :email, nil, :placeholder => 'Email', :autocomplete => "off"%><br>
@@ -13,7 +13,12 @@
 		</div>
 	<% elsif current_user %>
 		<h1 id='enter'><a href="/enter" id='entry'>Enter Garage</a></h1>
+		<div id='opener'>
+			<button id="open"><img src="/images/up.png" title="Open" width="40" height="40"></button>
+			<button id="close"><img src="/images/down.png" title="Close" width="40" height="40"></button>
+		</div>
 	<% end %>
+	<div id="door"></div>
 </body>
 
 

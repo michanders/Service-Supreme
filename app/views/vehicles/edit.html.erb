@@ -2,15 +2,16 @@
   	<%= render 'layouts/header' %>	
 	<br>
 	<div class='formbox'><br>
-		Add a Vehicle
+		Edit <%=@vehicle.model%>
 		<div class='forms'><br>
-			<%= form_for :vehicle, url: '/vehicle' do |f| %>
+			<%= form_for @vehicle, url: '/editvehicle' do |f| %>
 			  <%= f.text_field :make, placeholder: "Make", :autocomplete => :off %><br>
 			  <%= f.text_field :model, placeholder: "Model", :autocomplete => :off %><br>
 			  <%= f.number_field :year, placeholder: "Year", :autocomplete => :off %><br>
 			  <%= f.text_field :color, placeholder: "Color", :autocomplete => :off %><br>
 			  <%= f.number_field :mileage, placeholder: "Mileage", :autocomplete => :off %><br>
 			  <%= f.hidden_field :user_id, :value => current_user.id %><br>
+			  <%= f.hidden_field :vehicle_id, :value => @vehicle.id %>
 			  <%= f.submit :title => "Submit", :type => :image, :src => image_path("/images/login.png") %>
 			<% end %>
 		</div>

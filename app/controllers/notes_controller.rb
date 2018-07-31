@@ -6,9 +6,11 @@ class NotesController < ApplicationController
   
   
   def create
-    note = Note.new(note_params)
-    note.save
-    redirect_to vehicle_path(note_params[:vehicle_id])
+    unless note_params[:list].empty?
+      note = Note.new(note_params)
+      note.save
+      redirect_to vehicle_path(note_params[:vehicle_id])
+     end
   end
     
   def destroy
