@@ -10,9 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+
 //= require jquery3
-//= require loading_screen
+
 //= require jquery_ujs
 //= require turbolinks
 // require_tree .
@@ -34,13 +34,7 @@ $(function () {
     	$("#door").animate({"bottom": "-500px",opacity: 1}, "slow");
 });});
 
-$(document).on("turbolinks:click", function(){
-  $("#spinner").show();
-});
 
-$(document).on("turbolinks:load", function(){
-  $("#spinner").hide();
-});
 
 $(function () {
   $('#about').click(
