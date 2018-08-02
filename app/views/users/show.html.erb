@@ -1,8 +1,8 @@
 <body class='garage'>
   	<%= render 'layouts/header' %><br>
+  	<div class='chalkboard'>
 	<% if !current_user.vehicles.empty? %>
-		<div class='chalkboard'><br>
-			<% @vehicles.each do |vehicle| %>
+			<% @vehicles.each do |vehicle| %><br>
 			  <%= vehicle.make %>
 			  <%= vehicle.model %>
 			  <%=link_to image_tag("/images/tool.png", class: "tool", title: "Service " + vehicle.model), vehicle_path(vehicle.id)%>
@@ -11,8 +11,8 @@
 			  </form>
 			<%end%>
 	<%else%>
-		<h3>No vehicles stored</h3>
+		<h3 id='stored'>No vehicles stored</h3>
 	<%end%>
-	<a href="/newvehicle" title='Add Vehicle' id='addvehicle'><img src="/images/plus.png" width="30" height="30"><a>
+		<a href="/newvehicle" title='Add Vehicle' id='addvehicle'><img src="/images/plus.png" width="30" height="30"><a>
 	</div>
 </body>

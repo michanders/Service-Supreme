@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require loading_screen
  *= require_self
  */
 
@@ -46,7 +47,7 @@ body.garage {
 #links {
 	position: absolute;
 	right: 5%;
-	top: 25px;
+	top: 15px;
 	color: white;
 	text-decoration: none;
 }
@@ -54,7 +55,19 @@ body.garage {
 #garage, #logout {
 	color: white;
 	text-decoration: none;
-	padding: 5px;
+	padding: 0px;
+}
+
+#logout {
+	position: relative:
+	top: 5px;
+}
+
+#garage {
+	position: relative;
+	top: 5px;
+	width: 35px;
+	padding-left: 10px;
 }
 
 #door{
@@ -130,7 +143,7 @@ h2 a {
     text-decoration: none;
 }
 
-a:visited {
+a:visited, #stored {
 	color: #0096ff;
 }
 
@@ -318,6 +331,5 @@ button#open {
 	z-index: 0;
 	color: white;
 }
-
 
 
