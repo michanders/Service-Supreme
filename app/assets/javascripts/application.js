@@ -17,6 +17,7 @@
 //= require turbolinks
 // require_tree .
 
+
 $(document).on("turbolinks:click", function(){
   location.reload();
 });
@@ -40,4 +41,22 @@ $(document).on("turbolinks:click", function(){
 $(document).on("turbolinks:load", function(){
   $("#spinner").hide();
 });
+
+$(function () {
+  $('#about').click(
+  	function () {
+    	location.reload();
+},
+  	function () {
+    	$("#aboutpage").toggle();
+});});
+
+
+
+
+
+
+
+
+
 

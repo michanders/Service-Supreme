@@ -2,7 +2,7 @@
   	<%= render 'layouts/header' %>
 		<% if !current_user %><br>
 		<div class='formbox'>
-			<h2>Login / <a href="/signup">Signup</a></h2>
+			<h2>Log in / <a href="/signup">Sign up</a></h2>
 			<div class='forms' id='login'>
 			  <%= form_tag '/login' do %>
 			    <%= text_field_tag :email, nil, :placeholder => 'Email', :autocomplete => "off"%><br>

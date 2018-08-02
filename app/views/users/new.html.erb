@@ -1,7 +1,7 @@
 <body class='welcome'>
   	<%= render 'layouts/header' %><br>
   	<div class='formbox'>
-		<h2>Signup / <a href="/login">Login</a></h2>
+		<h2>Sign up / <a href="/login">Log in</a></h2>
 		<div class='forms'>
 		  <%= form_for :user, url: '/users' do |f| %>
 		    <%= f.text_field :name, placeholder: "Username", :autocomplete => :off %><br>

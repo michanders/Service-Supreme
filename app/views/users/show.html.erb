@@ -7,7 +7,7 @@
 			  <%= vehicle.model %>
 			  <%=link_to image_tag("/images/tool.png", class: "tool", title: "Service " + vehicle.model), vehicle_path(vehicle.id)%>
 			  <form action='/delete' id='deletevehicle'>
-			      <button type="submit" title="Delete <%= vehicle.model %>" name='delete' value="<%= vehicle.id %>"><img src="/images/can1.png" width="25" height="25"></button>
+			      <button type="submit" title="Delete <%= vehicle.model %>" name='delete' value="<%= vehicle.id %> " onclick="return confirm('Are you sure?')"><img src="/images/can1.png" width="25" height="25"></button>
 			  </form>
 			<%end%>
 	<%else%>

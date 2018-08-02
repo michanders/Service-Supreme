@@ -5,8 +5,8 @@
 		 	<%= @vehicle.year %>
 			<%= @vehicle.make %>
 			<%= @vehicle.model %>
-		</p><br>
-		<%=link_to image_tag("/images/tool.png", class: "edit", title: "Edit " + @vehicle.model), edit_vehicle_path(@vehicle.id)%>
+		</p>
+		<%=link_to image_tag("/images/tool.png", class: "edit", title: "Edit " + @vehicle.model), edit_vehicle_path(@vehicle.id)%><br>
 		Color:  <%= @vehicle.color %><br>
 		Mileage:  <%= @vehicle.mileage %><br>
 		MPG:  <%= @vehicle.mpg %><br><br><br>
@@ -34,7 +34,7 @@
 			<%@vehicle.auto_logs.each do |log|%>
 				<form action='/deletelog'>
 					<%=log.entry%>
-				    <button type="submit" title='Delete Log Entry' name='delete' value="<%= log.id %>"><img src="/images/can1.png" width="15" height="15"></button>
+				    <button type="submit" title='Delete Log Entry' name='delete' value="<%= log.id %>" onclick="return confirm('Are you sure?')"><img src="/images/can1.png" width="15" height="15"></button>
 				</form>
 			<%end%>
 		<%else%>
@@ -53,7 +53,7 @@
 			<%@vehicle.notes.each do |note|%>
 				<form action='/deletenote'>
 					<%=note.list%>
-				    <button type="submit" title='Delete Note' name='delete' value="<%= note.id %>"><img src="/images/can1.png" width="15" height="15"></button>
+				    <button type="submit" title='Delete Note' name='delete' value="<%= note.id %>" onclick="return confirm('Are you sure?')"><img src="/images/can1.png" width="15" height="15"></button>
 				</form>
 			<%end%>
 		<%else%>

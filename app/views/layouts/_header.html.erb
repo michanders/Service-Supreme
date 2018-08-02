@@ -1,11 +1,13 @@
 <div class="navbar">
-  <a href=<%=root_path%> id='home'><img id='logo' src='/images/servicelogo.jpg'></a>
+  <a href=<%=root_path%> title='Home' id='home'><img id='logo' src='/images/servicelogo.jpg'></a>
   <h1 id='title'>Service Supreme</h1>
 </div>
 <div id='links'>
 	  <% if current_user %>
-	  	<a id='logout' href="/logout">Logout</a>
+	  	<a id='logout' href="/logout" onclick="return confirm('Are you sure?')">Log out</a>
 	  	<%= link_to image_tag("/images/garageicon.png", id: "garage", title: "Garage "), user_path(current_user.id)%>
 	  <% end %>
+	  <button type="submit" title="About Service Supreme" id='about'><img src="/images/question.png" width="25" height="25"></button>
 </div>
 <%= render 'layouts/spinner' %>
+<%= render 'layouts/about' %>
