@@ -14,35 +14,10 @@
 //= require jquery3
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
-
-
-$(document).on("turbolinks:click", function(){
-  location.reload();
-});
-
-$(function () {
-  $('#open').click(
-  	function () {
-    	$("#door").animate({"bottom": "+600px",opacity: 1}, "slow");
-});});
-
-$(function () {
-  $('#close').click(
-  	function () {
-    	$("#door").animate({"bottom": "-500px",opacity: 1}, "slow");
-});});
+// require_tree .
 
 
 
-$(function () {
-  $('#about').click(
-  	function () {
-    	location.reload();
-},
-  	function () {
-    	$("#aboutpage").toggle();
-});});
 
 
 

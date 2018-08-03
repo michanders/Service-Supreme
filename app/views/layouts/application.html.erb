@@ -6,8 +6,34 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application'%>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'%>
+    <script>
+	$(document).on("turbolinks:click", function(){
+	  location.reload();
+	});
+	
+	$(function () {
+	  $('#open').click(
+	  	function () {
+	    	$("#door").animate({"bottom": "+600px",opacity: 1}, "slow");
+	});});
+	
+	$(function () {
+	  $('#close').click(
+	  	function () {
+	    	$("#door").animate({"bottom": "-500px",opacity: 1}, "slow");
+	});});
+	
+	$(function () {
+	  $('#about').click(
+	  	function () {
+	    	location.reload();
+	},
+	  	function () {
+	    	$("#aboutpage").toggle();
+	});});
+	
+  </script>
   </head>
   <%= yield %>
-  
 </html>
