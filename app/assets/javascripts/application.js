@@ -16,30 +16,30 @@
 // require_tree .
 
 
-$(document).on("turbolinks:click", function(){
-	  location.reload();
+$(document).on("turbolinks:click", function() {
+    location.reload()
+}),
+$(function() {
+    $("#open").click(function() {
+        $("#door").animate({
+            "bottom": "+600px",
+        }, "slow")
+    })
+}),
+$(function() {
+    $("#close").click(function() {
+        $("#door").animate({
+            "bottom": "-500px",
+        }, "slow")
+    })
+}),
+$(function() {
+    $("#about").click(function() {
+        location.reload()
+    }, function() {
+        $("#aboutpage").toggle()
+    })
 });
-
-$(function () {
-  $('#open').click(
-  	function () {
-    	$("#door").animate({"bottom": "+600px",opacity: 1}, "slow");
-});});
-
-$(function () {
-  $('#close').click(
-  	function () {
-    	$("#door").animate({"bottom": "-500px",opacity: 1}, "slow");
-});});
-
-$(function () {
-  $('#about').click(
-  	function () {
-    	location.reload();
-},
-  	function () {
-    	$("#aboutpage").toggle();
-});});
 
 
 
