@@ -348,10 +348,11 @@
 	}
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-device-width: 800px), (max-width: 900px) {
 
 	body.welcome, body.garage{
 		background-image: url("/images/insidegarage2.jpg");
+		background-repeat: repeat;
 		width: 100%;
 		position: absolute;
 		right: 0px;
@@ -431,5 +432,160 @@
 	
 	.edit {
 		right: 45%;
+	}
+}
+
+@media only screen and (max-device-width: 1000px) {
+	
+	.navbar {
+		height: 200px;
+	}
+
+	img#logo {
+		top: 25px;
+		left: 25px;
+		width: 155px;
+	}
+
+	a#logout, #garage, #about img {
+		width: 50px;
+		height: 50px;
+		font-size: 30px;
+
+	}
+
+	#links {
+		top: 60px;
+		width: 225px;
+	}
+
+	#title {
+		top: 60px;
+		font-size: 60px;
+		width: 550px;
+	}
+	
+	#door {
+		height: 1370px;
+		margin: auto;
+		position: absolute;
+		right: 0px;
+	}
+
+	#enter {
+		margin: auto;
+		top: 550px;
+	}
+
+	#opener {
+		top: 750px;
+		width: 60px;
+
+	}
+	
+	#open img, #close img {
+		border: none;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+	}
+	
+	
+	.chalkboard, .formbox {
+		top: 100px;
+		height: 1000px;
+		font-size: 75px;
+	}
+	
+	.chalkboard {
+		top: 200px;
+		height: 700px;
+	}
+	
+	.vehicleshow {
+		height: 450px;
+		font-size: 30px;
+	}
+	
+	input#email, #password, #user_name, #user_email, 
+	#user_password, #user_password_confirmation {
+		font-size: 25px;
+	    border-bottom: 8px solid white;
+	    width: 400px;
+	    color: white;
+	}
+
+	#note_list, #auto_entry_entry,
+	#vehicle_make, #vehicle_model, #vehicle_year, #vehicle_color {
+	    border-bottom: 8px solid white;
+	    width: 400px;
+	    font-size: 30px;
+	}
+	
+	#mpgform input, #vehicle_mileage {
+		border-bottom: 8px solid white;
+		width: 200px;
+		font-size: 30px;
+	}
+
+	#addvehicle {
+		bottom: 275px;
+		right: 45%;
+	}
+
+	#deletevehicle {
+		bottom: 100px;
+		left: 40%;
+	}
+	
+	#deletevehicle img, #addvehicle img {
+		width: 50px;
+		height: 50px;
+	}
+
+	.tool {
+		width: 55px;
+	}
+	
+	.oilchange {
+		bottom: 182px;
+		left: 250px;
+		width: 300px;
+	}
+	
+	.note, .log {
+		height: 500px;
+		font-size: 25px;
+	}
+	
+	.edit {
+		bottom: 50px;
+		right: 46% 
+	}
+	
+	.edit_vehicle input {
+		width: 75px;
+	}
+
+	#mpgform img {
+		width: 50px;
+		height: 50px;
+	}
+	
+	p.vehicleentry {
+		font-size: 35px;
+	}
+	
+	.entry {
+		height: 400px;
+	}
+	
+	#aboutpage {
+		position: absolute;
+		top: 300px;
+		right: 3%;
+		height: 500px;
+		border: 18px solid #0096ff;
+		font-size: 30px;
 	}
 }
