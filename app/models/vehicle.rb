@@ -5,7 +5,7 @@ class Vehicle < ApplicationRecord
   
   
   def mpg_calc(miles, gallons)
-    if miles === "0" || gallons === "0"
+    if miles === "0" || gallons === "0" || miles.empty? || gallons.empty?
        mpg = 1
     else
       mpg = miles.to_i/gallons.to_i
