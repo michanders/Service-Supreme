@@ -348,7 +348,7 @@
 	}
 }
 
-@media only screen and (max-device-width: 800px), (max-width: 900px) {
+@media only screen and (max-device-width: 900px), (max-width: 1000px) {
 
 	body.welcome, body.garage{
 		background-image: url("/images/insidegarage2.jpg");
