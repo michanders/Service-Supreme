@@ -658,7 +658,7 @@
 	
 	.vehicleshow {
 		width: 90%;
-		height: 450px;
+		height: 500px;
 		font-size: 30px;
 	}
 	
@@ -677,11 +677,23 @@
 	    font-size: 30px;
 	}
 	
-	#mpgform input, #vehicle_mileage {
+	#vehicle_mileage {
 		border-bottom: 8px solid white;
-		width: 200px;
+		width: 300px;
 		font-size: 30px;
 	}
+	
+	#mpgform {
+		right: 28%;
+		width: 400px;
+	}
+
+	#mpgform input {
+		font-size: 35px;
+		width: 300px;
+		border-bottom: 8px solid white;
+	}
+	
 
 	#addvehicle {
 		bottom: 255px;
