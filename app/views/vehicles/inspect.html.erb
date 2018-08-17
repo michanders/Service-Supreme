@@ -17,7 +17,7 @@
 				<%=@vehicle.model%> Service Log<br><br>
 			</p>
 			<%@vehicle.auto_logs.each do |log|%>
-				<%=log.entry%>
+				<%=log.entry%><br>
 			<%end%>
 		<%else%>
 			Service Log Empty<br>
@@ -30,7 +30,7 @@
 				<%=@vehicle.model%> Notes<br><br>
 			</p>
 			<%@vehicle.notes.each do |note|%>
-				<%=note.list%>
+				<%=note.list%><br>
 			<%end%>
 		<%else%>
 			Notes Empty<br>
