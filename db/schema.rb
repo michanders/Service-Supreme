@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 2018_07_19_011623) do
     t.string "color"
     t.integer "mileage", default: 0
     t.integer "mpg", default: 0
+    t.boolean "for_sale", default: false
+    t.integer "sale_price", default: 0
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

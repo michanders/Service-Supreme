@@ -7,6 +7,8 @@ class CreateVehicles < ActiveRecord::Migration[5.1]
       t.string :color
       t.integer :mileage, default: 0
       t.integer :mpg, default: 0
+      t.boolean :for_sale, default: false
+      t.integer :sale_price, default: 0
       t.belongs_to :user
       
       

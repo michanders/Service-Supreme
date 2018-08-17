@@ -1,18 +1,18 @@
 <body class='garage'>
   	<%= render 'layouts/header' %><br>
   	<div class='chalkboard'>
-	<% if !current_user.vehicles.empty? %>
-			<% @vehicles.each do |vehicle| %><br>
-			  <%= vehicle.make %>
-			  <%= vehicle.model %>
-			  <%=link_to image_tag("/images/tool.png", class: "tool", title: "Service " + vehicle.model), vehicle_path(vehicle.id)%>
-			  <form action='/delete' id='deletevehicle'>
-			      <button type="submit" title="Delete <%= vehicle.model %>" name='delete' value="<%= vehicle.id %> " onclick="return confirm('Are you sure?')"><img src="/images/can1.png" width="25" height="25"></button>
-			  </form>
+  		<a href="/newvehicle" title='Add Vehicle' id='addvehicle'><img src="/images/plus.png" width="30" height="30"><a>
+		<% if !current_user.vehicles.empty? %><br>
+			<% @vehicles.each do |vehicle| %>
+				  <%= vehicle.make %>
+				  <%= vehicle.model %>
+				  <%=link_to image_tag("/images/tool.png", class: "tool", title: "Service " + vehicle.model), vehicle_path(vehicle.id)%>
+				  <form action='/delete' id='deletevehicle'>
+				      <button type="submit" title="Delete <%= vehicle.model %>" name='delete' value="<%= vehicle.id %> " onclick="return confirm('Are you sure?')"><img src="/images/can1.png" width="25" height="25"></button>
+				  </form>
 			<%end%>
-	<%else%>
-		<h3 id='stored'>No vehicles stored</h3>
-	<%end%>
-		<a href="/newvehicle" title='Add Vehicle' id='addvehicle'><img src="/images/plus.png" width="30" height="30"><a>
+		<%else%>
+			<h3 id='stored'>No vehicles stored</h3>
+		<%end%>
 	</div>
 </body>

@@ -31,5 +31,10 @@ Rails.application.routes.draw do
   get '/deletelog' => 'auto_logs#destroy'
   get '/deletenote' => 'notes#destroy'
   
+  get '/sale' => 'vehicles#sell'
+  
+  get '/sales' => 'vehicles#sales'
+  
+  get '/inspect' => 'vehicles#inspect'
   
 end

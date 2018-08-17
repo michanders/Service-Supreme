@@ -1,12 +1,22 @@
 <div class="navbar">
   <a href=<%=root_path%> title='Home' id='home'><img id='logo' src='/images/servicelogo.jpg'></a>
   <h1 id='title'>Service Supreme</h1>
+  <button type="submit" title="About Service Supreme" id='about'><img src="/images/question.png" width="25" height="25"></button>
 </div>
-<div id='links'>
-	  <% if current_user %>
-	  	<a id='logout' href="/logout" onclick="return confirm('Are you sure?')">Log out</a>
-	  	<%= link_to image_tag("/images/garageicon.png", id: "garage", title: "Garage "), user_path(current_user.id)%>
-	  <% end %>
-	  <button type="submit" title="About Service Supreme" id='about'><img src="/images/question.png" width="25" height="25"></button>
-</div>
+<% if current_user %>
+	<div class="navbar2">
+	  <div class="dropdown">
+	    <button class="dropbtn">Menu
+	      <i class="fa fa-caret-down"></i>
+	    </button>
+	    <div class="dropdown-content">
+	      <% if current_user %>
+	        <a id='logout' href="/logout" onclick="return confirm('Are you sure?')">Log out</a>
+		  	<%= link_to image_tag("/images/garageicon.png", id: "garage", title: "Garage "), user_path(current_user.id)%>
+		  	<a id='forsale' href="/sales" >For sale</a>
+	      <% end %>
+	    </div>
+	  </div>
+	</div>
+<% end %>
 <%= render 'layouts/about' %>

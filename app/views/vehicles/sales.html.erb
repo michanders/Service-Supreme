@@ -1,0 +1,20 @@
+<body class='garage'>
+  	<%= render 'layouts/header' %><br>
+  	<div class='salepage'>
+		<% if @vehicles.empty? %>
+			<h3 id='stored'>No vehicles for sale</h3>
+		<% else %>
+			<h3 id='stored'>Vehicles for sale</h3>
+			<%@vehicles.each do |vehicle|%>
+				<% if vehicle.for_sale === true && vehicle.sale_price > 0%>
+					<%= vehicle.make %>
+					<%= vehicle.model %>
+					$<%= vehicle.sale_price %>
+					<form action='/inspect' id='sale'>
+					    <button type="submit" title="Inspect" name='price' value="<%=vehicle.id %>"><img class='tool' src="/images/tool.png" width="25" height="25"></button>
+					</form>
+				<%end%>
+			<%end%>
+		<%end%>
+	</div>
+</body>

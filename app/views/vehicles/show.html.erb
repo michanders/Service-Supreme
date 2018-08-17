@@ -9,7 +9,13 @@
 		<%=link_to image_tag("/images/tool.png", class: "edit", title: "Edit " + @vehicle.model), edit_vehicle_path(@vehicle.id)%><br>
 		Color:  <%= @vehicle.color %><br>
 		Mileage:  <%= @vehicle.mileage %><br>
-		MPG:  <%= @vehicle.mpg %><br><br><br>
+		MPG:  <%= @vehicle.mpg %><br>
+		<div id='sell' <% if @vehicle.for_sale === true%>style="background-color:lightgreen"<%else%>style="background-color:red"<%end%>>
+			<form action='/sale' id='sale'>
+				<input type ='integer' title="Update Sale Price" id ='price' name='price' placeholder="<%=@vehicle.sale_price%>" autocomplete="off"></input>
+			    <button type="submit" title="Sell Vehicle" name='id' value="<%= @vehicle.id %>">Sell</button>
+			</form>
+		</div>
 			
 		<form action='/miles' id='mpgform'>
 			<input type ='double' name='miles' placeholder="Miles Traveled" autocomplete="off"></input>

@@ -1,0 +1,39 @@
+<body class='garage'>
+	 <%= render 'layouts/header' %><br>
+	 <div class='vehicleshow'><br>
+	 	<p class='vehicletitle'>
+		 	<%= @vehicle.year %>
+			<%= @vehicle.make %>
+			<%= @vehicle.model %>
+		</p><br>
+		Color:  <%= @vehicle.color %><br>
+		Mileage:  <%= @vehicle.mileage %><br>
+		MPG:  <%= @vehicle.mpg %><br>
+	 </div>
+	 
+	<div class='log'><br>
+		<%if !@vehicle.auto_logs.empty?%>
+			<p class='vehicleentry'>
+				<%=@vehicle.model%> Service Log<br><br>
+			</p>
+			<%@vehicle.auto_logs.each do |log|%>
+				<%=log.entry%>
+			<%end%>
+		<%else%>
+			Service Log Empty<br>
+		<%end%>
+	</div>
+		
+	<div class='note'><br>
+		<%if !@vehicle.notes.empty?%>
+			<p class='vehicleentry'>
+				<%=@vehicle.model%> Notes<br><br>
+			</p>
+			<%@vehicle.notes.each do |note|%>
+				<%=note.list%>
+			<%end%>
+		<%else%>
+			Notes Empty<br>
+		<%end%>
+	</div>
+</body>

@@ -1,0 +1,15 @@
+<body class='garage'>
+  	<%= render 'layouts/header' %>
+	<br>
+	<div class='formbox'><br>
+		Sell <%=@vehicle.model%>
+		<div class='forms'><% end %>
+			<%= form_for @vehicle, url: '/sellvehicle' do |f| %>
+			  <%= f.number_field :sale_price, placeholder: "Sale Price", :autocomplete => :off %><br>
+			  <%= f.hidden_field :user_id, :value => current_user.id %><br>
+			  <%= f.hidden_field :vehicle_id, :value => @vehicle.id %>
+			  <%= f.submit :title => "Submit", :type => :image, :src => image_path("/images/login.png") %>
+			<% end %>
+		</div>
+	</div>
+</body>
