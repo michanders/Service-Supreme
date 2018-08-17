@@ -183,8 +183,9 @@
 	
 	#sell {
 		position: relative;
+		float: right;
 		bottom: 192px;
-		left: 88%;
+		left: -1%;
 		width: 10%;
 		border: 2px double white;
 	}
@@ -211,7 +212,7 @@
 		text-align: center;
 		margin: auto;
 		position:  relative;
-		bottom: 136px;
+		bottom: 62px;
 		left: 200px;
 		width: 300px;
 	}
@@ -308,7 +309,7 @@
 	#mpgform{
 		margin: auto;
 		position:  relative;
-		bottom: 25px;
+		top: 50px;
 		right: 135px;
 	}
 	
@@ -585,7 +586,6 @@
 	
 	#sell {
 		bottom: 220px;
-		left: 85%;
 		width: 12%;
 		font-size: 30px;
 		border: 5px solid white;
@@ -688,7 +688,7 @@
 	}
 
 	div.oilchange {
-		bottom: 225px;
+		bottom: 98px;
 	}
 
 	#mpgform input {
@@ -798,6 +798,10 @@
 	
 	#stored {
 		font-size: 70px;
+	}
+	
+	.note, .log {
+		height: 400px;
 	}
 
 }
