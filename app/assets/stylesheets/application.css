@@ -587,6 +587,22 @@
 	#forsale {
 		font-size: 39px;
 	}
+	
+	#sell {
+		bottom: 220px;
+		left: 86%;
+		width: 12%;
+		font-size: 30px;
+	}
+
+	#sale button {
+		font-size: 30px;
+	}
+	 
+	#price {
+		font-size: 20px;
+		margin-top: 10px;
+	}
 
 	#title {
 		top: 60px;
@@ -671,6 +687,10 @@
 		bottom: 255px;
 		right: 45%;
 	}
+	
+	.vehicletitle {
+		font-size: 50px;
+	}
 
 	#deletevehicle {
 		bottom: 90px;
@@ -699,8 +719,9 @@
 	}
 	
 	.edit {
-		bottom: 50px;
-		right: 46% 
+		bottom: 60px;
+		right: 45%;
+		width: 40px;
 	}
 	
 	.edit_vehicle input {
@@ -758,6 +779,10 @@
 		height: 30px;
 		padding: 5px;
 		border: 5px solid white;
+	}
+	
+	#stored {
+		font-size: 70px;
 	}
 
 }

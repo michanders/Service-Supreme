@@ -1,7 +1,7 @@
 <body class='garage'>
   	<%= render 'layouts/header' %><br>
   	<div class='salepage'>
-		<% if @vehicles.empty? %>
+		<% unless @vehicles.any?{|vehicle| vehicle.for_sale === true} %>
 			<h3 id='stored'>No vehicles for sale</h3>
 		<% else %>
 			<h3 id='stored'>Vehicles for sale</h3>
