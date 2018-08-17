@@ -688,7 +688,8 @@
 	}
 
 	div.oilchange {
-		bottom: 98px;
+		bottom: 146px;
+		left: 250px;
 	}
 
 	#mpgform input {
@@ -720,12 +721,6 @@
 	.tool {
 		width: 55px;
 		height: 55px;
-	}
-	
-	.oilchange {
-		bottom: 176px;
-		left: 250px;
-		width: 300px;
 	}
 	
 	.note, .log {
