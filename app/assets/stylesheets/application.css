@@ -578,11 +578,6 @@
 		height: 60px;
 		font-size: 40px;
 	}
-
-	#links {
-		top: 25px;
-		width: 250px;
-	}
 	
 	#forsale {
 		font-size: 39px;
@@ -590,9 +585,10 @@
 	
 	#sell {
 		bottom: 220px;
-		left: 86%;
+		left: 85%;
 		width: 12%;
 		font-size: 30px;
+		border: 5px solid white;
 	}
 
 	#sale button {
@@ -602,6 +598,8 @@
 	#price {
 		font-size: 20px;
 		margin-top: 10px;
+		width: 80%;
+		border-radius: none;
 	}
 
 	#title {
@@ -685,11 +683,16 @@
 	
 	#mpgform {
 		right: 28%;
+		bottom: 75px;
 		width: 400px;
 	}
 
+	div.oilchange {
+		bottom: 225px;
+	}
+
 	#mpgform input {
-		font-size: 35px;
+		font-size: 30px;
 		width: 300px;
 		border-bottom: 8px solid white;
 	}
